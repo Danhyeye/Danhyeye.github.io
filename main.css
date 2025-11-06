@@ -776,6 +776,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
     margin-bottom: 3rem;
+    align-items: stretch;
 }
 
 /* Each grid item now wraps a card and actions */
@@ -790,6 +791,7 @@ body {
     background-color: white;
     display: flex;               /* allow stacking image + content */
     flex-direction: column;
+    height: 100%;                /* make all cards equal height in the grid */
 }
 
 .project-card:hover {
@@ -940,6 +942,16 @@ body {
     gap: 1rem;
     margin-top: auto;            /* push links to the bottom when used inside card */
     padding-top: 1.5rem;  
+}
+
+/* Ensure buttons inside cards are equal width and height */
+.project-links .project-link {
+    flex: 1 1 0;                 /* make all buttons share space equally */
+    height: 50px;                /* consistent button height */
+    padding: 0 1rem;             /* horizontal padding only, height is fixed */
+    text-align: center;          /* center multi-line labels */
+    align-items: center;
+    justify-content: center;
 }
 
 /* Actions rendered under the card */
